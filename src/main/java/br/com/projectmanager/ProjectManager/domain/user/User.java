@@ -1,4 +1,4 @@
-package br.com.projectmanager.ProjectManager.user;
+package br.com.projectmanager.ProjectManager.domain.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

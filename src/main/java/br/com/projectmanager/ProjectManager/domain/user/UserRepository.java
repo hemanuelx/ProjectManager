@@ -1,4 +1,4 @@
-package br.com.projectmanager.ProjectManager.user;
+package br.com.projectmanager.ProjectManager.domain.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package br.com.projectmanager.ProjectManager.user;
+package br.com.projectmanager.ProjectManager.application.user;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
