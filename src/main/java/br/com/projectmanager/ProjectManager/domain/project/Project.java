@@ -1,13 +1,17 @@
 package br.com.projectmanager.ProjectManager.domain.project;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import br.com.projectmanager.ProjectManager.domain.folder.Folder;
+
+import javax.persistence.*;
 
 @Entity
 public class Project {
     private @Id @GeneratedValue Long id;
     private String name;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "folder_id", referencedColumnName = "id")
+    private Folder folder;
 
     public Project() {
     }
@@ -16,7 +20,16 @@ public class Project {
         this.name = name;
     }
 
+    public Project(String name, Folder folder) {
+        this.name = name;
+        this.folder = folder;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public Folder getFolder() {
+        return folder;
     }
 }

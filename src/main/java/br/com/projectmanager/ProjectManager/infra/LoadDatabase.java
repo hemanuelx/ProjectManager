@@ -1,5 +1,6 @@
 package br.com.projectmanager.ProjectManager.infra;
 
+import br.com.projectmanager.ProjectManager.domain.folder.Folder;
 import br.com.projectmanager.ProjectManager.domain.project.Project;
 import br.com.projectmanager.ProjectManager.domain.project.ProjectRepository;
 import br.com.projectmanager.ProjectManager.domain.user.UserRepository;
@@ -19,7 +20,7 @@ public class LoadDatabase {
         return args -> {
             log.info("Preloading " + repository.save(new br.com.projectmanager.ProjectManager.domain.user.User("hemanuel.xafranski", "hemanuel.xafranski@misterspex.de")));
             log.info("Preloading " + repository.save(new br.com.projectmanager.ProjectManager.domain.user.User("hemanuelx", "hemanuelx@gmail.com")));
-            log.info("Preloading " + projectRepository.save(new Project("Project X")));
+            log.info("Preloading " + projectRepository.save(new Project("Project X", new Folder("myFolder"))));
             log.info("Preloading " + projectRepository.save(new Project("Project 1")));
         };
     }
