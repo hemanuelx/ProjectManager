@@ -21,4 +21,8 @@ public class UserUseCase {
         return repository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
+
+    public User save(String userName, String email) {
+        return repository.save(new User(userName, email));
+    }
 }

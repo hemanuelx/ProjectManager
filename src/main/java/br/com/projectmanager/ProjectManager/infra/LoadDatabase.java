@@ -17,20 +17,20 @@ public class LoadDatabase {
 
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
-    @Bean
-    CommandLineRunner initDatabase(UserRepository repository, ProjectRepository projectRepository, FolderRepository folderRepository) {
-        Folder my2Folder = new Folder("my2Folder");
-        Folder my3Folder = new Folder("my3Folder");
-        Folder myFolder = new Folder("myFolder");
-        myFolder.addKidFolder(my2Folder);
-        myFolder.addKidFolder(my3Folder);
-
-        return args -> {
-            log.info("Preloading " + repository.save(new User("hemanuel.xafranski", "hemanuel.xafranski@misterspex.de")));
-            log.info("Preloading " + repository.save(new User("hemanuelx", "hemanuelx@gmail.com")));
-            log.info("Preloading " + projectRepository.save(new Project("Project X", myFolder)));
-            log.info("Preloading " + projectRepository.save(new Project("Project 1")));
-        };
-    }
+//    @Bean
+//    CommandLineRunner initDatabase(UserRepository repository, ProjectRepository projectRepository, FolderRepository folderRepository) {
+//        Folder my2Folder = new Folder("my2Folder");
+//        Folder my3Folder = new Folder("my3Folder");
+//        Folder myFolder = new Folder("myFolder");
+//        myFolder.addKidFolder(my2Folder);
+//        myFolder.addKidFolder(my3Folder);
+//
+//        return args -> {
+//            log.info("Preloading " + repository.save(new User("hemanuel.xafranski", "hemanuel.xafranski@misterspex.de")));
+//            log.info("Preloading " + repository.save(new User("hemanuelx", "hemanuelx@gmail.com")));
+//            log.info("Preloading " + projectRepository.save(new Project("Project X", myFolder)));
+//            log.info("Preloading " + projectRepository.save(new Project("Project 1")));
+//        };
+//    }
 
 }
