@@ -13,6 +13,8 @@ public class Project {
     @JoinColumn(name = "folder_id", referencedColumnName = "id")
     private Folder folder;
 
+
+
     public Project() {
     }
 

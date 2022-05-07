@@ -24,7 +24,6 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     User findById(@PathVariable Long id) {
-
         return userUseCase.findById(id);
     }
 }
