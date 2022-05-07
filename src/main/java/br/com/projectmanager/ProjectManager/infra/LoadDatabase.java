@@ -12,10 +12,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Set;
-
 @Configuration
 public class LoadDatabase {
 
@@ -23,12 +19,12 @@ public class LoadDatabase {
 
     @Bean
     CommandLineRunner initDatabase(UserRepository repository, ProjectRepository projectRepository, FolderRepository folderRepository) {
-//        Folder my2Folder = new Folder("my2Folder");
-//        Folder my3Folder = new Folder("my3Folder");
+        Folder my2Folder = new Folder("my2Folder");
+        Folder my3Folder = new Folder("my3Folder");
         Folder myFolder = new Folder("myFolder");
-//        myFolder.setParentFolder(myFolder);
-//        myFolder.addFolder(my2Folder);
-//        myFolder.addFolder(my3Folder);
+        myFolder.addKidFolder(my2Folder);
+        myFolder.addKidFolder(my3Folder);
+
         return args -> {
             log.info("Preloading " + repository.save(new User("hemanuel.xafranski", "hemanuel.xafranski@misterspex.de")));
             log.info("Preloading " + repository.save(new User("hemanuelx", "hemanuelx@gmail.com")));

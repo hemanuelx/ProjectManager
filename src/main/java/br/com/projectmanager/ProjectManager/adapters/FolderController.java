@@ -3,7 +3,6 @@ package br.com.projectmanager.ProjectManager.adapters;
 import br.com.projectmanager.ProjectManager.application.folder.FolderUseCase;
 import br.com.projectmanager.ProjectManager.domain.folder.Folder;
 import br.com.projectmanager.ProjectManager.domain.folder.FolderRepository;
-import br.com.projectmanager.ProjectManager.domain.project.ProjectRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

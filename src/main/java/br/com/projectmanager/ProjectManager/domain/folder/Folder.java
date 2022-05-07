@@ -1,8 +1,8 @@
 package br.com.projectmanager.ProjectManager.domain.folder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Folder {
@@ -11,6 +11,8 @@ public class Folder {
 
     private String name;
 
+    @OneToMany(targetEntity = Folder.class, cascade = CascadeType.ALL)
+    private final Set<Folder> children = new HashSet<>();
     public Folder() {
     }
 
@@ -24,5 +26,13 @@ public class Folder {
 
     public String getName() {
         return name;
+    }
+
+    public Set<Folder> getChildren() {
+        return children;
+    }
+
+    public void addKidFolder(Folder folder) {
+        children.add(folder);
     }
 }
